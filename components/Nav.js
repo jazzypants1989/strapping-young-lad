@@ -1,24 +1,29 @@
 import Link from "next/link";
 import { RiShoppingBag3Fill } from "react-icons/ri";
-import { NavItems, NavStyles } from "../styles/NavStyles";
+import { NavItems, NavStyles, OuterNav } from "../styles/NavStyles";
 import { useCart } from "../lib/context";
+import Cart from "./Cart";
 
 export default function Nav() {
-  const { cartItems } = useCart();
+  const { cartItems, cartOpen, setCartOpen } = useCart();
+
   return (
-    <NavStyles>
+    <OuterNav>
       <Link href="/">Electric Larry&apos;s!</Link>
-      <NavItems>
-        <li>
-          <RiShoppingBag3Fill />
+      <NavStyles>
+        <NavItems>
+          <li>
+            <RiShoppingBag3Fill onClick={() => setCartOpen(true)} />
+            {cartOpen && <Cart />}
+          </li>
           <span>
             {(
-              cartItems.reduce((acc, item) => acc + item.quantity, 0) || 0
-            ).toString()}
+              cartItems.reduce((acc, item) => acc + item.quantity, 0) ||
+              "Empty cart"
+            ).toString()}{" "}
           </span>
-          <h3>Cart!</h3>
-        </li>
-      </NavItems>
-    </NavStyles>
+        </NavItems>
+      </NavStyles>
+    </OuterNav>
   );
 }

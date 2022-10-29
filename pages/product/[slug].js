@@ -14,7 +14,7 @@ import { useCart } from "../../lib/context";
 import { useState } from "react";
 
 const ProductDetails = () => {
-  const { cartItems, setCartItems } = useCart();
+  const { cartItems, setCartItems, setCartOpen } = useCart();
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
   const { slug } = router.query;
@@ -30,7 +30,7 @@ const ProductDetails = () => {
   if (fetching) return <div>Loading...</div>;
   if (error) return <div>Oh no... {error.message}</div>;
 
-  let { title, description, image } = data.products.data[0].attributes;
+  let { title, description, image, price } = data.products.data[0].attributes;
 
   const addToCart = () => {
     const item = {
@@ -39,6 +39,7 @@ const ProductDetails = () => {
       description: description,
       image: image,
       quantity: quantity,
+      price: price,
     };
     //check if item is already in cart and update quantity
     const itemInCart = cartItems.find(
@@ -106,7 +107,7 @@ const ProductDetails = () => {
           onClick={() => {
             addToCart();
             setQuantity(1);
-            console.log(cartItems);
+            setCartOpen(true);
           }}
         >
           Add to Cart

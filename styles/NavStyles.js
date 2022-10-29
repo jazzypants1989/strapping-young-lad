@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
+export const OuterNav = styled.nav`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const NavStyles = styled.nav`
   min-height: 10vh;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
@@ -28,5 +36,14 @@ export const NavItems = styled.ul`
   }
   svg {
     font-size: 1.5rem;
+    cursor: pointer;
+    margin: 0.5rem;
   }
+`;
+
+export const Quantity = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
