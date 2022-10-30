@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const CartWrapper = styled.div`
+const { motion } = require("framer-motion");
+
+export const CartWrapper = styled(motion.div)`
   position: fixed;
   right: 0;
   top: 0;
@@ -12,15 +14,15 @@ export const CartWrapper = styled.div`
   justify-content: flex-end;
 `;
 
-export const CartStyle = styled.div`
+export const CartStyle = styled(motion.div)`
   max-width: 33vw;
   min-width: 300px;
-  background: #f2f2f2;
+  background: linear-gradient(90deg, #cc008c 0%, #993240 100%);
   overflow-y: scroll;
   position: relative;
 `;
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +30,8 @@ export const Card = styled.div`
   gap: 0.2rem;
   margin: 5%;
   padding: 0.2rem;
-  background: #fff;
+  background: linear-gradient(90deg, #a20080 0%, #a93240 100%);
+  color: pink;
   width: 90%;
   border-radius: 1rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
@@ -38,7 +41,7 @@ export const Card = styled.div`
   }
 `;
 
-export const CardInfo = styled.div`
+export const CardInfo = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,36 +61,67 @@ export const CardInfo = styled.div`
   }
 `;
 
-export const CardButton = styled.button`
+export const CardButton = styled(motion.button)`
   background: inherit;
   border: none;
   cursor: pointer;
   font-size: 1.25rem;
-  color: #000;
+  color: pink;
   padding: 0.25rem;
   width: fit-content;
 `;
 
-export const TotalPrice = styled.span`
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 15%;
-  text-align: justify;
+export const TotalPrice = styled(motion.span)`
+  font-size: 1.75rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  color: pink;
+  margin: 0.5rem;
 `;
 
-export const EmptyStyle = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+export const EmptyStyle = styled(motion.div)`
+  color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  max-width: fit-content;
+  margin-top: 25vh;
   h1 {
     font-size: 1.2rem;
     font-weight: 600;
-    padding-top: 1rem;
   }
   svg {
-    font-size: 8rem;
+    font-size: 10rem;
     color: #aa88ff;
   }
 `;
+
+export const BuyCart = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+`;
+
+export const BuyButton = styled(motion.button)`
+  background: hotpink;
+  cursor: pointer;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  :hover {
+    background: #ff00ff;
+  }
+`;
+
+export const Cards = styled(motion.div)``;

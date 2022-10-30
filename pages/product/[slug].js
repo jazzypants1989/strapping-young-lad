@@ -12,6 +12,7 @@ import {
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { useCart } from "../../lib/context";
 import { useState } from "react";
+const { motion } = require("framer-motion");
 
 const ProductDetails = () => {
   const { cartItems, setCartItems, setCartOpen } = useCart();
@@ -85,6 +86,7 @@ const ProductDetails = () => {
       <ProductInfo>
         <h3>{title}</h3>
         <p>{description}</p>
+        <h4>${price}</h4>
         <Quantity>
           <span>Quantity</span>
           <button
@@ -107,7 +109,6 @@ const ProductDetails = () => {
           onClick={() => {
             addToCart();
             setQuantity(1);
-            setCartOpen(true);
           }}
         >
           Add to Cart
@@ -122,9 +123,10 @@ const ProductDetails = () => {
         <button
           onClick={() => {
             console.log(cartItems);
+            setCartOpen(true);
           }}
         >
-          Log Cart
+          Log/Open Cart
         </button>
       </ProductInfo>
     </DetailsStyle>

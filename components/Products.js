@@ -17,9 +17,9 @@ export default function Product({ product }) {
             className="product-image"
           />
         </div>
+        <h2>{title}</h2>
       </Link>
-      <h2>{title}</h2>
-      <h3>{price}</h3>
+      <h3>${price}</h3>
     </ProductStyles>
   );
 }

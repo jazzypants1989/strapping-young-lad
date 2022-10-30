@@ -1,11 +1,12 @@
-import styled from "styled-components";
+import styled from "styled-components"
+const { motion } = require("framer-motion")
 
 export const OuterNav = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 export const NavStyles = styled.nav`
   min-height: 10vh;
@@ -17,7 +18,7 @@ export const NavStyles = styled.nav`
   a {
     font-size: 1.2rem;
   }
-`;
+`
 
 export const NavItems = styled.ul`
   display: flex;
@@ -39,11 +40,23 @@ export const NavItems = styled.ul`
     cursor: pointer;
     margin: 0.5rem;
   }
-`;
+`
+
+export const CutiePie = styled(motion.span)`
+  font-size: 0.6rem;
+  background: red;
+  color: white;
+  padding: 0.2rem;
+  border-radius: 50%;
+  position: relative;
+  top: -1rem;
+  right: 1rem;
+  cursor: pointer;
+`
 
 export const Quantity = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-`;
+`
